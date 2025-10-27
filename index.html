@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISTOS Quotation & CRM Tool</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/sidebar.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>ISTOS CRM</h2>
+      <ul class="menu">
+        <li><a href="#">Dashboard</a></li>
+        <li class="submenu">Master
+          <ul>
+            <li><a href="#">Company Master</a></li>
+            <li><a href="#">Branch Master</a></li>
+            <li><a href="#">Employee Master</a></li>
+            <li><a href="#">Vendor Master</a></li>
+            <li><a href="#">Customer Master</a></li>
+            <li><a href="#" class="active">Instrument Master</a></li>
+            <li><a href="#">Additional Item Master</a></li>
+            <li><a href="#">Configuration Item Master</a></li>
+            <li><a href="#">Consumable Master</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Quotation</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <h1>Instrument Master</h1>
+
+      <!-- Filters -->
+      <div class="filters">
+        <select><option>Country</option></select>
+        <select><option>HSN Code</option></select>
+        <select><option>GST %</option></select>
+        <input type="text" placeholder="Search by tag (e.g. UV, Rotary)" />
+      </div>
+
+      <!-- Instrument Table -->
+      <table class="instrument-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>HSN</th>
+            <th>Price</th>
+            <th>GST</th>
+            <th>Final Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10001</td>
+            <td><a href="#" onclick="openModal()">Diamond Bone Saw</a></td>
+            <td>Germany</td>
+            <td>82089090</td>
+            <td contenteditable>489545</td>
+            <td contenteditable>18%</td>
+            <td>577666</td>
+            <td>
+              <button>➕</button>
+              <button>✏️</button>
+              <button>🗑️</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Quotation Prefill -->
+      <section class="quotation-flow">
+        <h2>Create New Quotation</h2>
+        <label>Previous Quotation Number:</label>
+        <input type="text" placeholder="Q-20231054" />
+        <label><input type="checkbox" checked /> Use previous quotation as base</label>
+        <table>
+          <tr><th>Product</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+          <tr><td>Diamond Bone Saw</td><td>1</td><td>489545</td><td>577666</td></tr>
+        </table>
+        <button onclick="showToast()">Save & Submit</button>
+      </section>
+
+      <!-- Toast -->
+      <div id="toast" class="toast">Saved successfully ✅</div>
+
+      <!-- Audit Modal -->
+      <div id="modal" class="modal">
+        <h3>Audit Trail</h3>
+        <p>Added by: John Doe – Jan 9, 2024</p>
+        <p>Edited by: Jane Doe – Jan 12, 2024</p>
+        <select>
+          <option>Version 1 – Jan 9</option>
+          <option>Version 2 – Jan 11</option>
+        </select>
+        <button onclick="closeModal()">Close</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('modal').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 3000);
+    }
+  </script>
+</body>
+</html>
