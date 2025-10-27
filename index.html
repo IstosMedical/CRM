@@ -166,7 +166,7 @@
     </main>
   </div>
 
-  <!-- Scripts -->
+                        <!-- Scripts -->
   <script>
     function openModal() {
       document.getElementById('modal').style.display = 'block';
@@ -195,5 +195,12 @@
       setTimeout(() => toast.style.display = 'none', 3000);
     }
   </script>
+
+  <script>
+    document.getElementById('toggleSidebar').addEventListener('click', function () {
+      document.querySelector('.sidebar').classList.toggle('collapsed');
+    });
+  </script>
+
 </body>
 </html>
