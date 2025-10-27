@@ -34,6 +34,13 @@
     <main class="content">
       <h1>Instrument List</h1>
 
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <label for="search">Search:</label>
+        <input type="text" id="search" placeholder="Search instruments..." />
+      </div>
+
+      <!-- Instrument Table -->
       <table class="instrument-table">
         <thead>
           <tr>
@@ -46,6 +53,9 @@
             <th>HSN Code</th>
             <th>Additional Item</th>
             <th>Configuration Status</th>
+            <th>Basic Price</th>
+            <th>GST %</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -59,6 +69,13 @@
             <td>82089090</td>
             <td>✓</td>
             <td>✓</td>
+            <td>489545.00</td>
+            <td>18.00</td>
+            <td>
+              <button class="btn-view">👁️</button>
+              <button class="btn-edit">✏️</button>
+              <button class="btn-delete">🗑️</button>
+            </td>
           </tr>
           <tr>
             <td>2</td>
@@ -70,25 +87,38 @@
             <td>84798999</td>
             <td>✓</td>
             <td>✓</td>
+            <td>180232.00</td>
+            <td>18.00</td>
+            <td>
+              <button class="btn-view">👁️</button>
+              <button class="btn-edit">✏️</button>
+              <button class="btn-delete">🗑️</button>
+            </td>
           </tr>
-          <!-- Add more rows as needed -->
         </tbody>
       </table>
 
+      <!-- Quotation Flow -->
       <section class="quotation-flow">
         <h2>Create New Quotation</h2>
         <label>Previous Quotation Number:</label>
         <input type="text" placeholder="Q-20231054" />
         <label><input type="checkbox" checked /> Use previous quotation as base</label>
         <table>
-          <tr><th>Product</th><th>Qty</th><th>Price</th><th>Total</th></tr>
-          <tr><td>Diamond Bone Saw</td><td>1</td><td>489545</td><td>577666</td></tr>
+          <thead>
+            <tr><th>Product</th><th>Qty</th><th>Price</th><th>Total</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Diamond Bone Saw</td><td>1</td><td>489545</td><td>577666</td></tr>
+          </tbody>
         </table>
         <button onclick="showToast()">Save & Submit</button>
       </section>
 
+      <!-- Toast Message -->
       <div id="toast" class="toast">Saved successfully ✅</div>
 
+      <!-- Audit Modal -->
       <div id="modal" class="modal">
         <h3>Audit Trail</h3>
         <p>Added by: John Doe – Jan 9, 2024</p>
@@ -101,6 +131,22 @@
       </div>
     </main>
   </div>
+
+  <!-- Scripts -->
+  <script>
+    function openModal() {
+      document.getElementById('modal').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.style.display = 'block';
+      setTimeout(() => toast.style.display = 'none', 3000);
+    }
+  </script>
+</body>
 
   <script>
     function openModal() {
