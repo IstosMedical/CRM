@@ -1,3 +1,19 @@
+.search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-bar input[type="text"],
+.search-bar input[type="date"] {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
 /* Base font and layout */
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
