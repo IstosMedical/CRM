@@ -11,48 +11,47 @@
     <!-- Sidebar -->
     <aside class="sidebar">
       <h2>ISTOS</h2>
-    <ul class="menu">
-      <li><a href="#">📊 Dashboard</a></li>
-      <li class="submenu">🗂️ Master
-        <ul>
-          <li><a href="#">🏢 Company Master</a></li>
-          <li><a href="#">🏬 Branch Master</a></li>
-          <li><a href="#">👤 Employee Master</a></li>
-          <li><a href="#">🚚 Vendor Master</a></li>
-          <li><a href="#">🧑‍💼 Customer Master</a></li>
-          <li><a href="#" class="active">🧪 Instrument Master</a></li>
-          <li><a href="#">➕ Additional Item Master</a></li>
-          <li><a href="#">🧩 Configuration Item Master</a></li>
-          <li><a href="#">🧴 Consumable Master</a></li>
-        </ul>
-      </li>
-      <li><a href="#">📄 Quotation</a></li>
-    </ul>
+      <ul class="menu">
+        <li><a href="#">📊 Dashboard</a></li>
+        <li class="submenu">🗂️ Master
+          <ul>
+            <li><a href="#">🏢 Company Master</a></li>
+            <li><a href="#">🏬 Branch Master</a></li>
+            <li><a href="#">👤 Employee Master</a></li>
+            <li><a href="#">🚚 Vendor Master</a></li>
+            <li><a href="#">🧑‍💼 Customer Master</a></li>
+            <li><a href="#" class="active">🧪 Instrument Master</a></li>
+            <li><a href="#">➕ Additional Item Master</a></li>
+            <li><a href="#">🧩 Configuration Item Master</a></li>
+            <li><a href="#">🧴 Consumable Master</a></li>
+          </ul>
+        </li>
+        <li><a href="#">📄 Quotation</a></li>
+      </ul>
     </aside>
-         <!-- Sidebar Toggle Button -->
+
+    <!-- Sidebar Toggle Button -->
     <button id="toggleSidebar" class="sidebar-toggle">☰</button>
 
     <!-- Main Content -->
     <main class="content">
       <h2 class="page-title">ISTOS – QUOTATION TOOL</h2>
       <h3 class="section-title">Instrument List</h3>
-    
+
       <!-- Search & Date Filters -->
       <section class="search-section">
         <div class="search-bar">
           <label for="search">Search:</label>
           <input type="text" id="search" placeholder="Search instruments..." />
         </div>
-    
         <div class="date-filters">
           <label for="start-date">Start Date:</label>
           <input type="date" id="start-date" />
-    
           <label for="end-date">End Date:</label>
           <input type="date" id="end-date" />
         </div>
       </section>
-    
+
       <!-- Tag-Based Search -->
       <section class="tag-search">
         <label for="tags">Tags:</label>
@@ -65,10 +64,9 @@
           <span class="tag">Microtome</span>
         </div>
       </section>
-    
+
       <!-- Divider -->
       <hr class="section-divider" />
-    </main>
 
       <!-- Instrument Table -->
       <table class="instrument-table">
@@ -89,6 +87,7 @@
           </tr>
         </thead>
         <tbody>
+          <!-- Row 1 -->
           <tr>
             <td>1</td>
             <td>10001</td>
@@ -101,14 +100,15 @@
             <td>✓</td>
             <td>489545.00</td>
             <td>18.00</td>
-        <td>
-          <div style="display: flex; gap: 8px;">
-            <button style="background-color: #ffe5b4; color: #333; border: none; padding: 6px 10px; border-radius: 4px;">👁️</button>
-            <button style="background-color: #ffe5b4; color: #333; border: none; padding: 6px 10px; border-radius: 4px;">✏️</button>
-            <button style="background-color: #ffe5b4; color: red; border: none; padding: 6px 10px; border-radius: 4px;">🗑️</button>
-          </div>
-        </td>
+            <td>
+              <div class="action-buttons">
+                <button class="btn-view">👁️</button>
+                <button class="btn-edit">✏️</button>
+                <button class="btn-delete">🗑️</button>
+              </div>
+            </td>
           </tr>
+          <!-- Row 2 -->
           <tr>
             <td>2</td>
             <td>10002</td>
@@ -121,13 +121,13 @@
             <td>✓</td>
             <td>180232.00</td>
             <td>18.00</td>
-        <td>
-          <div style="display: flex; gap: 8px;">
-            <button style="background-color: #ffe5b4; color: #333; border: none; padding: 6px 10px; border-radius: 4px;">👁️</button>
-            <button style="background-color: #ffe5b4; color: #333; border: none; padding: 6px 10px; border-radius: 4px;">✏️</button>
-            <button style="background-color: #ffe5b4; color: red; border: none; padding: 6px 10px; border-radius: 4px;">🗑️</button>
-          </div>
-        </td>
+            <td>
+              <div class="action-buttons">
+                <button class="btn-view">👁️</button>
+                <button class="btn-edit">✏️</button>
+                <button class="btn-delete">🗑️</button>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -166,7 +166,7 @@
     </main>
   </div>
 
-                        <!-- Scripts -->
+  <!-- Scripts -->
   <script>
     function openModal() {
       document.getElementById('modal').style.display = 'block';
@@ -179,28 +179,10 @@
       toast.style.display = 'block';
       setTimeout(() => toast.style.display = 'none', 3000);
     }
-  </script>
-</body>
 
-  <script>
-    function openModal() {
-      document.getElementById('modal').style.display = 'block';
-    }
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-    function showToast() {
-      const toast = document.getElementById('toast');
-      toast.style.display = 'block';
-      setTimeout(() => toast.style.display = 'none', 3000);
-    }
-  </script>
-
-  <script>
     document.getElementById('toggleSidebar').addEventListener('click', function () {
       document.querySelector('.sidebar').classList.toggle('collapsed');
     });
   </script>
-
 </body>
 </html>
