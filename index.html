@@ -29,27 +29,32 @@
       <li><a href="#">📄 Quotation</a></li>
     </ul>
     </aside>
-   <button id="toggleSidebar" class="sidebar-toggle">☰</button>
+         <!-- Sidebar Toggle Button -->
+    <button id="toggleSidebar" class="sidebar-toggle">☰</button>
+
     <!-- Main Content -->
-    
     <main class="content">
       <h2 class="page-title">ISTOS – QUOTATION TOOL</h2>
-      <h1>Instrument List</h1>
-
+      <h3 class="section-title">Instrument List</h3>
+    
       <!-- Search & Date Filters -->
-      <div class="search-bar">
-        <label for="search">Search:</label>
-        <input type="text" id="search" placeholder="Search instruments..." />
-      
-        <label for="start-date" style="margin-left: 20px;">Start Date:</label>
-        <input type="date" id="start-date" />
-      
-        <label for="end-date" style="margin-left: 10px;">End Date:</label>
-        <input type="date" id="end-date" />
-      </div>
-
-            <!-- Tag-Based Search -->
-      <div class="tag-search">
+      <section class="search-section">
+        <div class="search-bar">
+          <label for="search">Search:</label>
+          <input type="text" id="search" placeholder="Search instruments..." />
+        </div>
+    
+        <div class="date-filters">
+          <label for="start-date">Start Date:</label>
+          <input type="date" id="start-date" />
+    
+          <label for="end-date">End Date:</label>
+          <input type="date" id="end-date" />
+        </div>
+      </section>
+    
+      <!-- Tag-Based Search -->
+      <section class="tag-search">
         <label for="tags">Tags:</label>
         <input type="text" id="tags" placeholder="e.g. UV, Grossing, Rotary" />
         <div class="tag-suggestions">
@@ -59,10 +64,11 @@
           <span class="tag">Cryostat</span>
           <span class="tag">Microtome</span>
         </div>
-      </div>
-
+      </section>
+    
       <!-- Divider -->
-<hr class="section-divider" />
+      <hr class="section-divider" />
+    </main>
 
       <!-- Instrument Table -->
       <table class="instrument-table">
