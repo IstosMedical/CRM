@@ -48,27 +48,39 @@
  <!-- Sidebar Toggle Button -->
     <button id="toggleSidebar" class="sidebar-toggle">☰</button>
 
-    <!-- Main Content -->
-    <main class="content">
-      <h2 class="page-title">ISTOS – QUOTATION TOOL</h2>
-      <h3 class="section-title">Instrument List</h3>
+<!-- Main Content -->
+<main class="content">
+  <h2 class="page-title">ISTOS – QUOTATION TOOL</h2>
+  <h3 class="section-title">Instrument List</h3>
 
-      <!-- Search & Date Filters -->
-      <section class="search-section">
-        <div class="search-bar">
-          <label for="search">Search:</label>
-          <input type="text" id="search" placeholder="Search instruments..." />
-        </div>
-        <div class="date-filters">
-          <label for="start-date">Start Date:</label>
-          <input type="date" id="start-date" />
-          <label for="end-date">End Date:</label>
-          <input type="date" id="end-date" />
-        </div>
-      </section>
+  <!-- Search + Tags Inline -->
+  <div class="search-tags-wrapper">
+    <div class="search-bar">
+      <label for="search">Search:</label>
+      <input type="text" id="search" placeholder="Search instruments..." />
+    </div>
 
-      <!-- Divider -->
-      <hr class="section-divider" />
+    <div class="tag-suggestions-inline">
+      <span class="tag">UV</span>
+      <span class="tag">Grossing</span>
+      <span class="tag">Rotary</span>
+      <span class="tag">Cryostat</span>
+      <span class="tag">Microtome</span>
+    </div>
+  </div>
+
+  <!-- Search & Date Filters -->
+  <section class="search-section">
+    <div class="date-filters">
+      <label for="start-date">Start Date:</label>
+      <input type="date" id="start-date" />
+      <label for="end-date">End Date:</label>
+      <input type="date" id="end-date" />
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <hr class="section-divider" />
 
       <!-- Instrument Table -->
       <table class="instrument-table">
