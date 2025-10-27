@@ -34,11 +34,18 @@
     <main class="content">
       <h1>Instrument List</h1>
 
-      <!-- Search Bar -->
+      <!-- Search & Date Filters -->
       <div class="search-bar">
         <label for="search">Search:</label>
         <input type="text" id="search" placeholder="Search instruments..." />
+      
+        <label for="start-date" style="margin-left: 20px;">Start Date:</label>
+        <input type="date" id="start-date" />
+      
+        <label for="end-date" style="margin-left: 10px;">End Date:</label>
+        <input type="date" id="end-date" />
       </div>
+
 
       <!-- Instrument Table -->
       <table class="instrument-table">
