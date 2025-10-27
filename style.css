@@ -1,0 +1,59 @@
+/* Global font settings */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  margin: 0;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 240px;
+  background-color: #e6f2ff;
+  color: #000;
+  height: 100vh;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .menu li {
+  margin-bottom: 10px;
+}
+
+.sidebar .menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  display: block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.sidebar .menu a:hover,
+.sidebar .menu a.active {
+  background-color: #cce6ff;
+  font-weight: 500;
+}
+
+/* Heading titles */
+.content h1,
+.content h2 {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
