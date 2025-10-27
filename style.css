@@ -1,10 +1,11 @@
 .sidebar-logo {
-  margin-top: 30px;
+  margin-top: auto;
+  padding-top: 20px;
   text-align: center;
 }
 
 .sidebar-logo img {
-  max-width: 120px;
+  width: 30%;
   height: auto;
   opacity: 0.9;
 }
