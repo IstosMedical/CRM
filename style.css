@@ -72,9 +72,11 @@ body {
 }
 
 .sidebar.collapsed {
-  width: 0;
-  padding: 0;
-  border: none;
+  width: 0 !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  overflow: hidden !important;
 }
 
 .content {
