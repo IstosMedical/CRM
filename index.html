@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ISTOS Quotation & CRM Tool</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="sidebar.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <div class="container">
@@ -33,49 +32,49 @@
 
     <!-- Main Content -->
     <main class="content">
-      <h1>Instrument Master</h1>
+      <h1>Instrument List</h1>
 
-      <!-- Filters -->
-      <div class="filters">
-        <select><option>Country</option></select>
-        <select><option>HSN Code</option></select>
-        <select><option>GST %</option></select>
-        <input type="text" placeholder="Search by tag (e.g. UV, Rotary)" />
-      </div>
-
-      <!-- Instrument Table -->
       <table class="instrument-table">
         <thead>
           <tr>
+            <th>#</th>
             <th>Code</th>
             <th>Name</th>
-            <th>Country</th>
-            <th>HSN</th>
-            <th>Price</th>
-            <th>GST</th>
-            <th>Final Price</th>
-            <th>Actions</th>
+            <th>Details</th>
+            <th>Catalog Ref</th>
+            <th>Country Of Origin</th>
+            <th>HSN Code</th>
+            <th>Additional Item</th>
+            <th>Configuration Status</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>1</td>
             <td>10001</td>
-            <td><a href="#" onclick="openModal()">Diamond Bone Saw</a></td>
-            <td>Germany</td>
+            <td>ISTOS Diamond Bone Saw</td>
+            <td>Normal Teeth Blade - 1 No. Fotte...</td>
+            <td>IDBS240</td>
+            <td>Germany / Switzerland / India</td>
             <td>82089090</td>
-            <td contenteditable>489545</td>
-            <td contenteditable>18%</td>
-            <td>577666</td>
-            <td>
-              <button>➕</button>
-              <button>✏️</button>
-              <button>🗑️</button>
-            </td>
+            <td>✓</td>
+            <td>✓</td>
           </tr>
+          <tr>
+            <td>2</td>
+            <td>10002</td>
+            <td>ISTOS INTELISINT ETP</td>
+            <td>Fully enclosed, state of the art...</td>
+            <td>T</td>
+            <td>Italy</td>
+            <td>84798999</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <!-- Add more rows as needed -->
         </tbody>
       </table>
 
-      <!-- Quotation Prefill -->
       <section class="quotation-flow">
         <h2>Create New Quotation</h2>
         <label>Previous Quotation Number:</label>
@@ -88,10 +87,8 @@
         <button onclick="showToast()">Save & Submit</button>
       </section>
 
-      <!-- Toast -->
       <div id="toast" class="toast">Saved successfully ✅</div>
 
-      <!-- Audit Modal -->
       <div id="modal" class="modal">
         <h3>Audit Trail</h3>
         <p>Added by: John Doe – Jan 9, 2024</p>
