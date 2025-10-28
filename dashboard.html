@@ -3,113 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISTOS Dashboard</title>
-  <link rel="stylesheet" href="dashboard.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>ISTOS CRM Dashboard</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body>
-  <!-- Dashboard Container -->
-  <div class="dashboard">
-    <div class="dashboard-header">
-      <h2>ISTOS CRM Dashboard</h2>
-      <span class="last-updated">Last updated: Oct 28, 2025 ⏱️</span>
-    </div>
+<body class="bg-gray-50 text-gray-800">
 
-<!-- Quick Stats: Single Row -->
-<section class="bg-blue-50 rounded-lg p-4 shadow-sm mt-6 flex justify-between gap-4 overflow-x-auto">
+  <!-- Fixed Container -->
+  <div class="dashboard-container mx-auto max-w-screen-xl px-6 py-8 space-y-6">
 
-  <!-- Quotations -->
-  <div class="bg-white border border-blue-200 rounded-lg p-4 text-center min-w-[200px] flex flex-col items-center">
-    <div class="text-3xl mb-2">📄</div>
-    <h4 class="text-sm font-semibold text-gray-600">Quotations</h4>
-    <p class="text-2xl font-bold text-blue-600">124</p>
-    <span class="text-sm text-green-600 mt-1 flex items-center">▲ 12% from last month</span>
-  </div>
+    <!-- Header -->
+    <header class="flex justify-between items-center">
+      <h1 class="text-2xl font-bold">ISTOS CRM Dashboard</h1>
+      <span class="text-sm italic text-gray-500">Last updated: Oct 28, 2025 ⏱️</span>
+    </header>
 
-  <!-- Instruments -->
-  <div class="bg-white border border-blue-200 rounded-lg p-4 text-center min-w-[200px] flex flex-col items-center">
-    <div class="text-3xl mb-2">🧪</div>
-    <h4 class="text-sm font-semibold text-gray-600">Instruments</h4>
-    <p class="text-2xl font-bold text-blue-600">58</p>
-    <span class="text-sm text-red-600 mt-1 flex items-center">▼ 5% from last month</span>
-  </div>
+    <!-- Quick Actions -->
+    <section class="bg-white rounded-lg shadow p-4 flex gap-4">
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm">➕ New Quotation</button>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm">🧪 Add Instrument</button>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm">👥 Add Customer</button>
+    </section>
 
-  <!-- Customers -->
-  <div class="bg-white border border-blue-200 rounded-lg p-4 text-center min-w-[200px] flex flex-col items-center">
-    <div class="text-3xl mb-2">👥</div>
-    <h4 class="text-sm font-semibold text-gray-600">Customers</h4>
-    <p class="text-2xl font-bold text-blue-600">32</p>
-    <span class="text-sm text-green-600 mt-1 flex items-center">▲ 8% from last month</span>
-  </div>
-
-  <!-- Vendors -->
-  <div class="bg-white border border-blue-200 rounded-lg p-4 text-center min-w-[200px] flex flex-col items-center">
-    <div class="text-3xl mb-2">🏢</div>
-    <h4 class="text-sm font-semibold text-gray-600">Vendors</h4>
-    <p class="text-2xl font-bold text-blue-600">12</p>
-    <span class="text-sm text-gray-500 mt-1 flex items-center">— No change</span>
-  </div>
-
-</section>
-
-
-<!-- Instrument Proposed Summary -->
-<section class="bg-white shadow-md rounded-lg p-6 mt-8">
-  <h2 class="text-lg font-semibold text-gray-800 mb-4">🧪 Instrument Sales Summary</h2>
-
-      <!-- Search + Tags Inline -->
-      <div class="search-tags-wrapper">
-        <div class="search-bar">
-          <label for="search">Search:</label>
-          <input type="text" id="search" placeholder="Search instruments..." />
-        </div>
-
-        <div class="tag-suggestions-inline">
-          <span class="tag">Bonesaw</span>
-          <span class="tag">LabGross Grossing</span>
-          <span class="tag">Rotary Microtome</span>
-          <span class="tag">Tissue Processor</span>
-          <span class="tag">Cryostat</span>
-          <span class="tag">Tissue Embedding Centre</span>
-          <span class="tag">Cassette Printer</span>
-        </div>
+    <!-- Quick Stats -->
+    <section class="bg-blue-50 rounded-lg p-4 shadow flex justify-between gap-4">
+      <div class="bg-white border border-blue-200 rounded-lg p-4 text-center w-1/4 flex flex-col items-center">
+        <div class="text-3xl mb-2">📄</div>
+        <h4 class="text-sm font-semibold">Quotations</h4>
+        <p class="text-2xl font-bold text-blue-600">124</p>
+        <span class="text-sm text-green-600 mt-1">▲ 12% from last month</span>
       </div>
+      <div class="bg-white border border-blue-200 rounded-lg p-4 text-center w-1/4 flex flex-col items-center">
+        <div class="text-3xl mb-2">🧪</div>
+        <h4 class="text-sm font-semibold">Instruments</h4>
+        <p class="text-2xl font-bold text-blue-600">58</p>
+        <span class="text-sm text-red-600 mt-1">▼ 5% from last month</span>
+      </div>
+      <div class="bg-white border border-blue-200 rounded-lg p-4 text-center w-1/4 flex flex-col items-center">
+        <div class="text-3xl mb-2">👥</div>
+        <h4 class="text-sm font-semibold">Customers</h4>
+        <p class="text-2xl font-bold text-blue-600">32</p>
+        <span class="text-sm text-green-600 mt-1">▲ 8% from last month</span>
+      </div>
+      <div class="bg-white border border-blue-200 rounded-lg p-4 text-center w-1/4 flex flex-col items-center">
+        <div class="text-3xl mb-2">🏢</div>
+        <h4 class="text-sm font-semibold">Vendors</h4>
+        <p class="text-2xl font-bold text-blue-600">12</p>
+        <span class="text-sm text-gray-500 mt-1">— No change</span>
+      </div>
+    </section>
 
-      <!-- Search & Date Filters -->
-      <section class="search-section">
-        <div class="date-filters">
-          <label for="start-date">Start Date:</label>
-          <input type="date" id="start-date" />
-          <label for="end-date">End Date:</label>
-          <input type="date" id="end-date" />
-        </div>
-      </section>
+    <!-- Instrument Summary Charts -->
+    <section class="flex justify-between gap-6">
+      <div class="bg-white border border-gray-300 rounded shadow p-4 w-1/2">
+        <h3 class="text-base font-semibold mb-2 text-center">Instrument Proposed Summary</h3>
+        <img src="chart2.png" alt="Instrument Proposed Chart" class="w-full rounded" />
+      </div>
+      <div class="bg-white border border-gray-300 rounded shadow p-4 w-1/2">
+        <h3 class="text-base font-semibold mb-2 text-center">Instrument Sales Summary</h3>
+        <img src="chart.png" alt="Instrument Sales Chart" class="w-full rounded" />
+      </div>
+    </section>
 
-      <!-- Instrument Summary Charts -->
-      <section class="mt-6 flex flex-wrap justify-center gap-6">
-        <!-- Sales Chart -->
-        <div class="bg-white border border-gray-300 rounded shadow-md p-4 max-w-md">
-          <h3 class="text-base font-semibold text-gray-800 mb-2 text-center">Instrument Proposed Summary</h3>
-          <img src="chart2.png" alt="Instrument Proposed Chart" class="w-full rounded" />
-        </div>
-      
-        <!-- Proposed Chart -->
-        <div class="bg-white border border-gray-300 rounded shadow-md p-4 max-w-md">
-          <h3 class="text-base font-semibold text-gray-800 mb-2 text-center">Instrument Sales Summary</h3>
-          <img src="chart.png" alt="Instrument Sales Chart" class="w-full rounded" />
-        </div>
-      </section>
-
-
-      <!-- Divider -->
-      <hr class="section-divider" />
-
-`    <!-- Recent Activity -->
-    <section class="activity-log">
-      <h3>🔄 Recent Activity</h3>
-      <ul>
+    <!-- Recent Activity -->
+    <section class="bg-white rounded-lg shadow p-4">
+      <h3 class="text-lg font-semibold mb-2">🔄 Recent Activity</h3>
+      <ul class="list-disc pl-5 text-sm space-y-1">
         <li>Quotation Q-20231054 submitted by Sarfaraz</li>
         <li>Instrument “Diamond Bone Saw” updated</li>
         <li>New customer added: Meditech Labs</li>
@@ -117,25 +76,25 @@
     </section>
 
     <!-- Pending Actions -->
-    <section class="pending-actions">
-      <h3>⏳ Pending Actions</h3>
-      <ul>
+    <section class="bg-white rounded-lg shadow p-4">
+      <h3 class="text-lg font-semibold mb-2">⏳ Pending Actions</h3>
+      <ul class="list-disc pl-5 text-sm space-y-1">
         <li>3 quotations awaiting / in-draft</li>
-        <li>2 instruments missing HSN codes...</li>
-        <li>1 vendor profile incomplete...</li>
+        <li>2 instruments missing HSN codes</li>
+        <li>1 vendor profile incomplete</li>
       </ul>
     </section>
 
     <!-- Revenue Snapshot -->
-    <section class="revenue-snapshot">
-      <h3>📈 Revenue Snapshot</h3>
-      <ul>
+    <section class="bg-white rounded-lg shadow p-4">
+      <h3 class="text-lg font-semibold mb-2">📈 Revenue Snapshot</h3>
+      <ul class="list-disc pl-5 text-sm space-y-1">
         <li>October Total: ₹12.4L</li>
         <li>Avg Deal Size: ₹2.1L</li>
         <li>Current Financial Year: ₹24.2L</li>
       </ul>
     </section>
-  </div>
 
+  </div>
 </body>
 </html>
