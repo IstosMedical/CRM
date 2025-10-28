@@ -23,13 +23,51 @@
       <button>👥 Add Customer</button>
     </section>
 
-    <!-- Quick Stats -->
-    <section class="quick-stats">
-      <div class="stat-card">Quotations<br><strong>124</strong></div>
-      <div class="stat-card">Instruments<br><strong>58</strong></div>
-      <div class="stat-card">Customers<br><strong>32</strong></div>
-      <div class="stat-card">Vendors<br><strong>12</strong></div>
-    </section>
+<!-- Quick Stats with Icons and Trend Arrows -->
+<section class="bg-blue-50 rounded-lg p-4 shadow-sm mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+
+  <!-- Quotations Card -->
+  <div class="bg-white border border-blue-200 rounded-lg p-4 text-center flex flex-col items-center">
+    <div class="text-3xl mb-2">📄</div>
+    <h4 class="text-sm font-semibold text-gray-600">Quotations</h4>
+    <p class="text-2xl font-bold text-blue-600">124</p>
+    <span class="text-sm text-green-600 mt-1 flex items-center">
+      ▲ 12% from last month
+    </span>
+  </div>
+
+  <!-- Instruments Card -->
+  <div class="bg-white border border-blue-200 rounded-lg p-4 text-center flex flex-col items-center">
+    <div class="text-3xl mb-2">🧪</div>
+    <h4 class="text-sm font-semibold text-gray-600">Instruments</h4>
+    <p class="text-2xl font-bold text-blue-600">58</p>
+    <span class="text-sm text-red-600 mt-1 flex items-center">
+      ▼ 5% from last month
+    </span>
+  </div>
+
+  <!-- Customers Card -->
+  <div class="bg-white border border-blue-200 rounded-lg p-4 text-center flex flex-col items-center">
+    <div class="text-3xl mb-2">👥</div>
+    <h4 class="text-sm font-semibold text-gray-600">Customers</h4>
+    <p class="text-2xl font-bold text-blue-600">32</p>
+    <span class="text-sm text-green-600 mt-1 flex items-center">
+      ▲ 8% from last month
+    </span>
+  </div>
+
+  <!-- Vendors Card -->
+  <div class="bg-white border border-blue-200 rounded-lg p-4 text-center flex flex-col items-center">
+    <div class="text-3xl mb-2">🏢</div>
+    <h4 class="text-sm font-semibold text-gray-600">Vendors</h4>
+    <p class="text-2xl font-bold text-blue-600">12</p>
+    <span class="text-sm text-gray-500 mt-1 flex items-center">
+      — No change
+    </span>
+  </div>
+
+</section>
+
 
 <!-- Instrument Sales Summary -->
 <section class="bg-white shadow-md rounded-lg p-6 mt-8">
