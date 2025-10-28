@@ -61,6 +61,8 @@
 
   <!-- Chart Canvas -->
   <canvas id="instrumentChart" class="w-full h-64"></canvas>
+  <canvas id="instrumentChart" style="height: 300px;"></canvas>
+
 </section>
 
     <!-- Recent Activity -->
@@ -96,7 +98,8 @@
 
   <!-- Chart Logic -->
 
-  <script>
+<script>
+  // 📦 Static Instrument Sales Data
   const rawSalesData = [
     { name: 'Bonesaw', count: 12, date: '2025-10-01' },
     { name: 'LabGross Grossing', count: 8, date: '2025-10-05' },
@@ -107,23 +110,23 @@
     { name: 'Cassette Printer', count: 7, date: '2025-10-28' }
   ];
 
-  const ctx = document.getElementById('instrumentChart').getContext('2d');
+  // 🎯 DOM References
+  const ctx = document.getElementById('instrumentChart')?.getContext('2d');
   const tableBody = document.querySelector('#salesTable tbody');
-  let chartInstance;
+  let chartInstance = null;
 
-  function renderTable(data) {
-    tableBody.innerHTML = '';
-    data.forEach(item => {
-      const row = document.createElement('tr');
-      row.innerHTML = `
+  // 🧮 Render Table Rows
+  const renderTable = (data) => {
+    tableBody.innerHTML = data.map(item => `
+      <tr>
         <td class="border px-4 py-2">${item.name}</td>
         <td class="border px-4 py-2 text-right text-indigo-600 font-medium">${item.count}</td>
-      `;
-      tableBody.appendChild(row);
-    });
-  }
+      </tr>
+    `).join('');
+  };
 
-  function renderChart(data) {
+  // 📊 Render Bar Chart
+  const renderChart = (data) => {
     const labels = data.map(item => item.name);
     const values = data.map(item => item.count);
 
@@ -148,7 +151,7 @@
           legend: { display: false },
           tooltip: {
             callbacks: {
-              label: ctx => `${ctx.parsed.y} units`
+              label: context => `${context.parsed.y} units`
             }
           }
         },
@@ -160,24 +163,26 @@
         }
       }
     });
-  }
+  };
 
-  function applyFilter() {
+  // 📅 Apply Date Filter
+  const applyFilter = () => {
     const start = document.getElementById('startDate').value;
     const end = document.getElementById('endDate').value;
 
-    const filtered = rawSalesData.filter(item => {
-      return (!start || item.date >= start) && (!end || item.date <= end);
-    });
+    const filtered = rawSalesData.filter(({ date }) =>
+      (!start || date >= start) && (!end || date <= end)
+    );
 
     renderTable(filtered);
     renderChart(filtered);
-  }
+  };
 
-  // Initial render
-  applyFilter();
-
-  document.getElementById('filterBtn').addEventListener('click', applyFilter);
+  // 🚀 Initialize on DOM Ready
+  document.addEventListener('DOMContentLoaded', () => {
+    applyFilter();
+    document.getElementById('filterBtn').addEventListener('click', applyFilter);
+  });
 </script>
 
 </body>
