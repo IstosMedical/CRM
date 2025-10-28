@@ -4,16 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ISTOS Quotation & CRM Tool</title>
-  <link rel="stylesheet" href="style.css">  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
 </head>
-  
+
 <body>
   <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
       <h2>ISTOS</h2>
       <ul class="menu">
-        <li><a href="dashboard.html">📊 Dashboard</a></li>        
+        <li><a href="dashboard.html" data-load="dashboard">📊 Dashboard</a></li>
         <li class="submenu">🗂️ Master
           <ul>
             <li><a href="#">🏢 Company Master</a></li>
@@ -30,49 +31,49 @@
         <li><a href="#">📄 Quotation</a></li>
       </ul>
 
-        <div class="sidebar-logo">
+      <div class="sidebar-logo">
         <img src="istos-logo.png" alt="ISTOS Logo" />
-        </div>
+      </div>
     </aside>
 
- <!-- Sidebar Toggle Button -->
+    <!-- Sidebar Toggle Button -->
     <button id="toggleSidebar" class="sidebar-toggle">☰</button>
 
-<!-- Main Content -->
-<main class="content">
-  <h2 class="page-title">ISTOS – QUOTATION TOOL</h2>
-  <h3 class="section-title">Instrument List</h3>
+    <!-- Main Content -->
+    <main class="content" id="mainContent">
+      <h2 class="page-title">ISTOS – QUOTATION TOOL</h2>
+      <h3 class="section-title">Instrument List</h3>
 
-  <!-- Search + Tags Inline -->
-  <div class="search-tags-wrapper">
-    <div class="search-bar">
-      <label for="search">Search:</label>
-      <input type="text" id="search" placeholder="Search instruments..." />
-    </div>
+      <!-- Search + Tags Inline -->
+      <div class="search-tags-wrapper">
+        <div class="search-bar">
+          <label for="search">Search:</label>
+          <input type="text" id="search" placeholder="Search instruments..." />
+        </div>
 
-    <div class="tag-suggestions-inline">
-      <span class="tag">Bonesaw</span>
-      <span class="tag">LabGross Grossing</span>
-      <span class="tag">Rotary Microtome</span>
-      <span class="tag">Tissue Processor</span>
-      <span class="tag">Cryostat</span>
-      <span class="tag">Tissue Embedding Centre</span>
-      <span class="tag">Cassette Printer</span>
-    </div>
-  </div>
+        <div class="tag-suggestions-inline">
+          <span class="tag">Bonesaw</span>
+          <span class="tag">LabGross Grossing</span>
+          <span class="tag">Rotary Microtome</span>
+          <span class="tag">Tissue Processor</span>
+          <span class="tag">Cryostat</span>
+          <span class="tag">Tissue Embedding Centre</span>
+          <span class="tag">Cassette Printer</span>
+        </div>
+      </div>
 
-  <!-- Search & Date Filters -->
-  <section class="search-section">
-    <div class="date-filters">
-      <label for="start-date">Start Date:</label>
-      <input type="date" id="start-date" />
-      <label for="end-date">End Date:</label>
-      <input type="date" id="end-date" />
-    </div>
-  </section>
+      <!-- Search & Date Filters -->
+      <section class="search-section">
+        <div class="date-filters">
+          <label for="start-date">Start Date:</label>
+          <input type="date" id="start-date" />
+          <label for="end-date">End Date:</label>
+          <input type="date" id="end-date" />
+        </div>
+      </section>
 
-  <!-- Divider -->
-  <hr class="section-divider" />
+      <!-- Divider -->
+      <hr class="section-divider" />
 
       <!-- Instrument Table -->
       <table class="instrument-table">
@@ -93,7 +94,6 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Row 1 -->
           <tr>
             <td>1</td>
             <td>10001</td>
@@ -114,7 +114,6 @@
               </div>
             </td>
           </tr>
-          <!-- Row 2 -->
           <tr>
             <td>2</td>
             <td>10002</td>
@@ -188,6 +187,19 @@
 
     document.getElementById('toggleSidebar').addEventListener('click', function () {
       document.querySelector('.sidebar').classList.toggle('collapsed');
+    });
+
+    // Dynamic dashboard loader
+    document.querySelectorAll('[data-load]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        fetch(target)
+          .then(res => res.text())
+          .then(html => {
+            document.getElementById('mainContent').innerHTML = html;
+          });
+      });
     });
   </script>
 </body>
